@@ -21,7 +21,6 @@ class Solution {
         return (int)curr;
     }
 }
-
 class Solution {
     public int nthUglyNumber(int n) {
       int arr[]= new int[n+1];
