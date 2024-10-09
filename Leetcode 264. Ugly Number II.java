@@ -21,3 +21,25 @@ class Solution {
         return (int)curr;
     }
 }
+
+class Solution {
+    public int nthUglyNumber(int n) {
+      int arr[]= new int[n+1];
+        arr[1]= 1;
+
+        int i2=1, i3=1, i5=1, ugly=0;
+        for(int i=1; i<n; i++){
+            arr[i+1]= Math.min(Math.min(arr[i2]*2, arr[i3]*3), arr[i5]*5);
+            ugly= arr[i+1];
+
+            if(arr[i2]* 2==ugly)
+            i2++;
+            if(arr[i3]* 3==ugly)
+            i3++;
+            if(arr[i5]* 5==ugly)
+            i5++;
+        }
+        System.out.println(Arrays.toString(arr));
+        return arr[n];
+    }
+}
